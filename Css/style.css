@@ -1,0 +1,189 @@
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../flor.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Para colocarlo detrás de todo el contenido */
+    opacity: 0.3; /* Opacidad de la imagen de fondo */
+}
+
+
+
+h1 {
+    text-align: center;
+    font-size: 100px;
+    margin: 0;
+}
+
+.Con-2 {
+    display: none;
+}
+
+canvas {
+    display: block;
+}
+
+.Contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Asegura que el canvas y el texto se coloquen uno debajo del otro */
+    height: 100vh;
+    margin: 0;
+}
+
+.Con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.Texto {
+    margin-top: -20px; /* Ajusta la distancia entre las flores y el texto */
+    display: none; /* Ocultamos el texto inicialmente */
+    text-align: center;
+    margin-bottom: 100px;
+    padding-bottom: 0;
+ 
+}
+
+.Texto h2 {
+    font-size: 30px;
+}
+#B12 {
+    margin-left: 30px;
+}
+
+.Button {
+    font-family: monospace;
+    font-size: x-large;
+    transition-duration: 0.2s;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: greenyellow;
+    color: black;
+    border: 2px solid green;
+    cursor: pointer;
+}
+
+.Button:hover {
+    transform: scale(1.1);
+    border-radius: 14px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Contenedor-Binicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.Con-Emergente {
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+}
+
+.cua {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 2px solid greenyellow;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: aparecer 0.5s ease-out;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 400px; /* Coloca el ícono a 10px del borde inferior */
+    right: 10px; /* Coloca el ícono a 10px del borde derecho */
+    font-size: 40px; /* Tamaño del ícono */
+    color: #25D366; /* Color verde de WhatsApp */
+    z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.whatsapp-icon a {
+    text-decoration: none;
+}
+
+.whatsapp-icon a:hover {
+    color: #128C7E; /* Cambia el color al pasar el cursor */
+}
+
+
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Responsividad para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+    /* Aquí los elementos se apilan mejor en pantallas más pequeñas */
+    .Contenedor {
+        flex-direction: column;
+        height: auto;
+    }
+    canvas {
+        width: 100%; /* Ajusta el ancho del canvas al 100% del contenedor */
+        height: auto; /* Mantiene la proporción adecuada */
+    }
+
+
+    h1 {
+        font-size: 50px;
+    }
+    .Texto h2 {
+        font-size: 30px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin: 40px;
+    }
+   
+}
+
+@media only screen and (max-width: 468px) {
+    h1 {
+        font-size: 30px;
+    }
+    .Texto h2 {
+        font-size: 20px; /* Tamaño de fuente aún más pequeño para pantallas muy pequeñas */
+    }
+    canvas {
+        width: 100%; /* Ajusta el canvas para móviles */
+        height: auto;
+    }
+
+
+
+    .Button {
+        font-size: medium;
+        padding: 5px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
