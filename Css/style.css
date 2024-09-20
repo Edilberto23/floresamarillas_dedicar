@@ -12,7 +12,38 @@ body::before {
     opacity: 0.3; /* Opacidad de la imagen de fondo */
 }
 
+/*estilos para los botones*/
+#BotonRegresar {
+    margin-top: 2rem;
+    width: 14rem;
+    padding: 0.8rem;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #1c5ae0, #1cb5e0) 1;
+    box-shadow: 20px 0px 60px 5px #1c5ae0c2;
+    background-color:rgb(0, 0, 0);
+    animation: btn-animation 8s infinite;
+    border-radius: 2px;
+}
 
+@keyframes btn-animation {
+    16.667%,
+    100% {
+        border-image: linear-gradient(to right, #1c5ae0, #1cb5e0) 1;
+        box-shadow: 20px 0px 60px 5px #1c5ae0c2;
+    }
+    50% {
+        border-image: linear-gradient(to right, #5106ff, #ff2819) 1;
+        box-shadow: 20px 0px 60px 5px #ff281991;
+    }
+    83.333% {
+        border-image: linear-gradient(to right, #d53369, #daae51) 1;
+        box-shadow: 20px 0px 60px 5px #daaf518e;
+    }
+}
 
 h1 {
     text-align: center;
@@ -33,7 +64,7 @@ canvas {
     justify-content: center;
     align-items: center;
     flex-direction: column; /* Asegura que el canvas y el texto se coloquen uno debajo del otro */
-    height: 100vh;
+    height: 80%;
     margin: 0;
 }
 
@@ -50,11 +81,13 @@ canvas {
     text-align: center;
     margin-bottom: 100px;
     padding-bottom: 0;
- 
 }
 
 .Texto h2 {
     font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(../flor.jpg);
+    border-radius: 10px;
 }
 #B12 {
     margin-left: 30px;
@@ -75,7 +108,9 @@ canvas {
 .Button:hover {
     transform: scale(1.1);
     border-radius: 14px;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow:
+        0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .Contenedor-Binicio {
@@ -113,7 +148,7 @@ canvas {
     bottom: 400px; /* Coloca el ícono a 10px del borde inferior */
     right: 10px; /* Coloca el ícono a 10px del borde derecho */
     font-size: 40px; /* Tamaño del ícono */
-    color: #25D366; /* Color verde de WhatsApp */
+    color: #25d366; /* Color verde de WhatsApp */
     z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
 }
 
@@ -122,10 +157,8 @@ canvas {
 }
 
 .whatsapp-icon a:hover {
-    color: #128C7E; /* Cambia el color al pasar el cursor */
+    color: #128c7e; /* Cambia el color al pasar el cursor */
 }
-
-
 
 @keyframes aparecer {
     0% {
@@ -150,7 +183,6 @@ canvas {
         height: auto; /* Mantiene la proporción adecuada */
     }
 
-
     h1 {
         font-size: 50px;
     }
@@ -160,7 +192,11 @@ canvas {
         margin-bottom: 20px;
         margin: 40px;
     }
-   
+    .girasol{
+        width: 70%; /* Ajusta el ancho del canvas al 100% del contenedor */
+        height: auto; /* Mantiene la proporción adecuada */
+        border-radius: 12px;
+    }
 }
 
 @media only screen and (max-width: 468px) {
@@ -174,8 +210,6 @@ canvas {
         width: 100%; /* Ajusta el canvas para móviles */
         height: auto;
     }
-
-
 
     .Button {
         font-size: medium;
